@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Nav from '../Nav/Nav';
 import './ItemForm.css';
 
-class Item extends Component {
+class ItemForm extends Component {
   render() {
     return (
       <main className='main'>
@@ -13,30 +13,30 @@ class Item extends Component {
         <section>
           <form id="record-content">
             <section className="overview-section">
-              <label for="content-title">Movie / TV show title</label>
+              <label htmlFor="content-title">Movie / TV show title</label>
               <input type="text" name="content-title" placeholder="Haunting of Hill House" required />
             </section>
 
             <section className="content-streaming overview-section">
               <div>
-                <label for="content-streaming1" />
+                <label htmlFor="content-streaming1" />
                 <input type="button" name="content-streaming1" value="Netflix" required />
               </div>
               <div>
-                <label for="content-streaming2" />
+                <label htmlFor="content-streaming2" />
                 <input type="button" name="content-streaming2" value="Hulu" required />
               </div>
               <div>
-                <label for="content-streaming3" />
+                <label htmlFor="content-streaming3" />
                 <input type="button" name="content-streaming3" value="Prime Video" required />
               </div>
             </section>
 
             <section className="form-section overview-section content-rating">
               <div className="content-rating">
-                <label for="rating-watch">Watch</label>
+                <label htmlFor="rating-watch">Watch</label>
                   <input type="radio" id="rating-watch" value="rating-watch" required />
-                <label for="rating-skip">Skip</label>
+                <label htmlFor="rating-skip">Skip</label>
                   <input type="radio" id="rating-skip" value="rating-skip" required />
               </div>
             </section>
@@ -51,4 +51,4 @@ class Item extends Component {
   }
 };
 
-export default Item;
+export default ItemForm;

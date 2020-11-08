@@ -16,11 +16,11 @@ footer {
   background-color: #aaa;
 }
 
-header {
-  padding: 20px 15px;
+.banner {
+  padding: 75px 0 0 0;
 }
 
-section {
+/* section {
   min-height: 100px;
   padding: 30px 15px;
   background-color: #bbb;
@@ -28,7 +28,7 @@ section {
 
 section:nth-child(even) {
   background-color: #ddd;
-}
+} */
 
 p {
   margin: 0 auto;
