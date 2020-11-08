@@ -6,10 +6,6 @@ class ItemForm extends Component {
   render() {
     return (
       <main className='main'>
-        <Nav />
-        <header>
-          <h1>Search for Movie / TV show recommendation</h1>
-        </header>
         <section>
           <form id="record-content">
             <section className="overview-section">
@@ -17,7 +13,7 @@ class ItemForm extends Component {
               <input type="text" name="content-title" placeholder="Haunting of Hill House" required />
             </section>
 
-            <section className="content-streaming overview-section">
+            <div className="content-streaming overview-section">
               <div>
                 <label htmlFor="content-streaming1" />
                 <input type="button" name="content-streaming1" value="Netflix" required />
@@ -30,20 +26,19 @@ class ItemForm extends Component {
                 <label htmlFor="content-streaming3" />
                 <input type="button" name="content-streaming3" value="Prime Video" required />
               </div>
-            </section>
-
-            <section className="form-section overview-section content-rating">
+            </div>
+            
               <div className="content-rating">
-                <label htmlFor="rating-watch">Watch</label>
-                  <input type="radio" id="rating-watch" value="rating-watch" required />
-                <label htmlFor="rating-skip">Skip</label>
-                  <input type="radio" id="rating-skip" value="rating-skip" required />
+                <label htmlFor="rating-watch" />
+                  <input type="button" id="rating-watch" value="Watch" required />
+                <label htmlFor="rating-skip" />
+                  <input type="button" id="rating-skip" value="Skip" required />
               </div>
-            </section>
-            <section className="button-section">
+            
+            <div>
               <button type="submit">Submit</button>
               <button type="reset">Reset</button>
-            </section>
+            </div>
           </form>
         </section>
       </main>

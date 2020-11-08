@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { nativeTouchData } from 'react-dom/test-utils';
 import { Link } from 'react-router-dom';
 import './Nav.css';
 

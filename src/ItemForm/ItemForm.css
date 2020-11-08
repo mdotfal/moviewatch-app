@@ -92,8 +92,10 @@ input[type="button"] {
 
 .content-rating {
   justify-content: center;
+  padding-bottom: 10px;
 }
 
 .content-streaming {
   justify-content: space-evenly;
+  padding-bottom: 20px;
 }
