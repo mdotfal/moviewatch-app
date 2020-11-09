@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import ListItem from '../ListItem/ListItem';
 import './WatchList.css';
 
 class WatchList extends Component {
@@ -9,42 +10,10 @@ class WatchList extends Component {
           <header className="banner">
             <h1>Watchlist</h1>
           </header>
-          <section>
-            <header>
-                <h2>Back to the Future II - <span className='green'>Watch</span></h2>
-            </header>
-            <blockquote>Praesent sagittis a mi sit amet dictum. Donec orci nibh, dignissim in leo et, congue semper mauris.</blockquote>
-            <div className='stream-buttons'>
-              <button className='btn'>Netflix</button>
-              <button className='btn'>Hulu</button>
-              <button className='btn'>Prime Video</button>
-            </div>
-            <button>Edit</button>
-            <button>Delete</button>
-          </section>
-          <section>
-            <header>
-                <h2>The Big Short - <span className='green'>Watch</span></h2>
-            </header>
-            <div className='stream-buttons'>
-              <button className='btn'>Netflix</button>
-              <button className='btn'>Prime Video</button>
-            </div>
-            <button>Edit</button>
-            <button>Delete</button>
-          </section>
-          <section>
-            <header>
-                <h2>The Room - <span className='red'>Skip</span></h2>
-            </header>
-            <div className='stream-buttons'>
-              <button className='btn'>Prime Video</button>
-            </div>
-            <button>Edit</button>
-            <button>Delete</button>
-          </section>
+          <ListItem />
+          <ListItem />
+          <ListItem />
         </main>
-        <footer className="content-info">Footer</footer>
       </div>
     );
   }

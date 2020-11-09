@@ -6,7 +6,7 @@ class Nav extends Component {
   render() {
     return (
       <section className='navigation'>
-        <Link to='/home'>
+        <Link to='/'>
           Home
         </Link>
         <Link to='/watchlist'>
