@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 class StreamingOptions extends Component {
   render() {
     return (
-      <form className="content-streaming overview-section">
+      <div className="content-streaming overview-section">
         <fieldset>
           <div>
             <label htmlFor="content-streaming1" />Netflix
@@ -18,7 +18,7 @@ class StreamingOptions extends Component {
             <input type="checkbox" id="stream-primevideo" name="content-streaming3" value="Prime Video" required />
           </div>
         </fieldset>
-      </form>
+      </div>
     );
   }
 };
