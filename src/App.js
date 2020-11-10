@@ -35,6 +35,7 @@ class App extends Component {
         <Route exact path='/' component={ Home }/> 
         <Route path='/item' component={ ItemForm } />
         <Route path='/watchlist' component={ WatchList } />
+
         <Footer />
       </main>
     );
