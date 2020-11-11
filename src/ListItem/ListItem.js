@@ -1,19 +1,25 @@
 import React, { Component } from 'react';
+import watchList from '../watchList';
 
 class ListItem extends Component {
   render() {
     return (
-      <section>
-        <header>
-            <h2>The Big Short - <span className='green'>Watch</span></h2>
-        </header>
-        <div className='stream-buttons'>
-          <button className='btn'>Netflix</button>
-          <button className='btn'>Prime Video</button>
-        </div>
-        <button>Edit</button>
-        <button>Delete</button>
-      </section>
+      {
+        watchList.map( item => {
+            <section>
+              <header>
+                <h2>{ item.title } - <span className='green'>{ item.rating }</span></h2>
+              </header>
+                <div className='stream-buttons'>
+                  { item.isNetflix ? <button> Netflix </button> : "" }
+                  { item.isHulu ? <button> Hulu </button> : "" }
+                  { item.isPrime ? <button> Prime </button> : "" }
+                </div>
+              <p>Edit</p>
+              <p>Delete</p>
+            </section>
+        })
+      }
     );
   }
 };

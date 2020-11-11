@@ -11,8 +11,8 @@ class WatchList extends Component {
             <h1>Watchlist</h1>
           </header>
           <ListItem />
-          <ListItem />
-          <ListItem />
+          {/* <ListItem />
+          <ListItem /> */}
         </main>
       </div>
     );
