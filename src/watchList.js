@@ -9,10 +9,17 @@ const watchList = [
   },
   {
     title: "The Room",
-    isNetflix: true,
-    isHulu: true,
+    isNetflix: false,
+    isHulu: false,
     isPrime: true,
     rating: "Skip",
+  },
+  {
+    title: "The Avengers",
+    isNetflix: true,
+    isHulu: false,
+    isPrime: true,
+    rating: "Watch",
   },
  
 ]

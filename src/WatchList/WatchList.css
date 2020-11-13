@@ -11,6 +11,10 @@ body {
   line-height: 1.5;
 }
 
+h2 {
+  margin: 0;
+}
+
 footer {
   padding: 1% 0;
   background-color: #aaa;

@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import Header from '../Header/Header';
-import ItemForm from '../ItemForm/ItemForm';
 
 class Home extends Component {
   render() {
@@ -11,7 +10,6 @@ class Home extends Component {
           <div>
             Recommend a title
           </div>
-          <ItemForm />
         </section>
       </div>
     );

@@ -85,7 +85,6 @@ input[type="button"] {
 
 .content-rating,
 .content-streaming {
-  display: flex;
   flex-direction: row;
   text-align: center;
 }
@@ -98,4 +97,5 @@ input[type="button"] {
 .content-streaming {
   justify-content: space-evenly;
   padding-bottom: 20px;
+  flex-direction: row;
 }

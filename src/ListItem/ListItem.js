@@ -1,25 +1,40 @@
 import React, { Component } from 'react';
-import watchList from '../watchList';
+import AppContext from '../AppContext';
+// import watchList from '../watchList';
 
 class ListItem extends Component {
+  static contextType = AppContext;
+  
   render() {
+
     return (
-      {
-        watchList.map( item => {
-            <section>
-              <header>
-                <h2>{ item.title } - <span className='green'>{ item.rating }</span></h2>
-              </header>
-                <div className='stream-buttons'>
-                  { item.isNetflix ? <button> Netflix </button> : "" }
-                  { item.isHulu ? <button> Hulu </button> : "" }
-                  { item.isPrime ? <button> Prime </button> : "" }
-                </div>
-              <p>Edit</p>
-              <p>Delete</p>
-            </section>
-        })
-      }
+      <section>
+        <p>Available on:</p>
+        <header>
+          <h2>{ this.props.item.title } - 
+            <span>
+              { this.props.item.rating === 'Watch' 
+                ? <button className='green'>{ this.props.item.rating }</button> 
+                : <button className='red'>{ this.props.item.rating }</button> 
+              }
+            </span></h2>
+        </header>
+          <div className='stream-buttons'>
+            { this.props.item.isNetflix ? <button> Netflix </button> : "" }
+            { this.props.item.isHulu ? <button> Hulu </button> : "" }
+            { this.props.item.isPrime ? <button> Prime </button> : "" }
+          </div>
+        <button 
+          onClick={ () => this.props.onEditItem( this.props.item ) } 
+          type='button'>
+            Edit
+        </button>
+        <button
+          onClick={ () => this.props.onDeleteItem( this.props.item ) } 
+          type='button'>
+            Delete
+        </button>
+      </section>
     );
   }
 };
