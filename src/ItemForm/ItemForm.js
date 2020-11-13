@@ -1,35 +1,42 @@
 import React, { Component } from 'react';
+import AppContext from '../AppContext';
 import RatingOptions from '../RatingOptions/RatingOptions';
 import StreamingOptions from '../StreamingOptions/StreamingOptions';
 import './ItemForm.css';
 
 class ItemForm extends Component {
-
   static defaultProps = {
-    onAddItem: () => {}
+    history: {
+      push: () => { }
+    },
   }
+
+  static contextType = AppContext;
   
   handleSubmit = e => {
     e.preventDefault()
-    console.log('submit clicked')
-    const { title } = e.target
-    // const { title, isNetflix, isHulu, isPrime, rating } = e.target
-    const item = {
-      title: title.value,
-    //   isNetflix: isNetflix.value,
-    //   isHulu: isHulu.value,
-    //   isPrime: isPrime.value,
-    //   rating: rating.value
+    // console.log('submit clicked', this.context )
+    const newItem = {
+      title: e.target.title.value,
+      rating: e.target.rating.value,
+      isNetflix: e.target.isNetflix.value, 
+      isHulu: e.target.isHulu.value, 
+      isPrime: e.target.isPrime.value, 
     }
-    this.setState({ error: null })
+    this.context.onAddItem( newItem );
+    // console.log( 'props', this.props )
+    // this.props.history.push( '/' );
+  }
 
+  handleButtonClick = () => {
+    // this.form.reset()
   }
 
   render() {
     return (
       <main className='main'>
         <section>
-          <form onSubmit={ e => this.handleSubmit( e ) } id="record-content">
+          <form onSubmit={ this.handleSubmit } id="record-content">
             <section className="overview-section">
               <label htmlFor="title">Movie / TV show title</label>
               <input type="text" id="content-title" name="title" placeholder="Haunting of Hill House" />
@@ -42,7 +49,10 @@ class ItemForm extends Component {
               <button 
                 type="submit"
               >Submit</button>
-              <button type="reset">Reset</button>
+              <button 
+                type="reset"
+                onClick={ this.handleButtonClick }
+              >Reset</button>
             </div>
           </form>
         </section>

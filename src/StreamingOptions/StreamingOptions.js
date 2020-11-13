@@ -6,16 +6,16 @@ class StreamingOptions extends Component {
       <div className="content-streaming overview-section">
         <fieldset>
           <div>
-            <label htmlFor="streaming1" />Netflix
-            <input type="checkbox" id="stream-netflix" name="streaming1" value="Netflix"  />
+            <label htmlFor="isNetflix" />Netflix
+            <input type="checkbox" id="stream-netflix" name="isNetflix" value="Netflix"  />
           </div>
           <div>
-            <label htmlFor="content-streaming2" />Hulu
-            <input type="checkbox" id="stream-hulu" name="streaming2" value="Hulu"  />
+            <label htmlFor="isHulu" />Hulu
+            <input type="checkbox" id="stream-hulu" name="isHulu" value="Hulu"  />
           </div>
           <div>
-            <label htmlFor="content-streaming3" />Prime Video
-            <input type="checkbox" id="stream-primevideo" name="streaming3" value="Prime Video"  />
+            <label htmlFor="isPrime" />Prime Video
+            <input type="checkbox" id="stream-primevideo" name="isPrime" value="Prime Video"  />
           </div>
         </fieldset>
       </div>
