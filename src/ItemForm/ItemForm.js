@@ -16,16 +16,15 @@ class ItemForm extends Component {
   handleSubmit = e => {
     e.preventDefault()
     // console.log('submit clicked', this.context )
-    const newItem = {
-      title: e.target.title.value,
-      rating: e.target.rating.value,
-      isNetflix: e.target.isNetflix.value, 
-      isHulu: e.target.isHulu.value, 
-      isPrime: e.target.isPrime.value, 
-    }
-    this.context.onAddItem( newItem );
-    // console.log( 'props', this.props )
-    // this.props.history.push( '/' );
+    this.context.onAddItem( 
+      e.target.title.value,
+      e.target.rating.value,
+      e.target.isNetflix.value, 
+      e.target.isHulu.value, 
+      e.target.isPrime.value, 
+     );
+    console.log( 'context', this.context )
+    this.props.history.push( '/watchlist' );
   }
 
   handleButtonClick = () => {

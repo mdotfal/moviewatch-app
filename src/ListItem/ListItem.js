@@ -9,7 +9,6 @@ class ListItem extends Component {
 
     return (
       <section>
-        <p>Available on:</p>
         <header>
           <h2>{ this.props.item.title } - 
             <span>
@@ -18,11 +17,12 @@ class ListItem extends Component {
                 : <button className='red'>{ this.props.item.rating }</button> 
               }
             </span></h2>
+            <p>Available on:</p>
         </header>
           <div className='stream-buttons'>
-            { this.props.item.isNetflix ? <button> Netflix </button> : "" }
-            { this.props.item.isHulu ? <button> Hulu </button> : "" }
-            { this.props.item.isPrime ? <button> Prime </button> : "" }
+            { this.props.item.isNetflix !== false ? <button> Netflix </button> : "" }
+            { this.props.item.isHulu !== false ? <button> Hulu </button> : "" }
+            { this.props.item.isPrime !== false ? <button> Prime </button> : "" }
           </div>
         <button 
           onClick={ () => this.props.onEditItem( this.props.item ) } 

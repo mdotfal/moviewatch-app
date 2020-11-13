@@ -11,7 +11,29 @@ import AppContext from './AppContext';
 class App extends Component {
 
   state = {
-    items : [],
+    items : [
+      {
+        title: "Back to the Future II",
+        isNetflix: true,
+        isHulu: true,
+        isPrime: true,
+        rating: "Watch",
+      },
+      {
+        title: "The Room",
+        isNetflix: false,
+        isHulu: false,
+        isPrime: true,
+        rating: "Skip",
+      },
+      {
+        title: "The Avengers",
+        isNetflix: true,
+        isHulu: false,
+        isPrime: true,
+        rating: "Watch",
+      },
+    ],
     newItem: {
       title: {
         value: ''
