@@ -4,6 +4,7 @@ import { Route } from 'react-router-dom';
 import Home from './Home/Home';
 import ItemForm from './ItemForm/ItemForm';
 import WatchList from './WatchList/WatchList';
+import watchList from './watchList';
 import Footer from './Footer/Footer';
 import './App.css';
 import AppContext from './AppContext';
@@ -11,46 +12,7 @@ import AppContext from './AppContext';
 class App extends Component {
 
   state = {
-    items : [
-      {
-        title: "Back to the Future II",
-        isNetflix: true,
-        isHulu: true,
-        isPrime: true,
-        rating: "Watch",
-      },
-      {
-        title: "The Room",
-        isNetflix: false,
-        isHulu: false,
-        isPrime: true,
-        rating: "Skip",
-      },
-      {
-        title: "The Avengers",
-        isNetflix: true,
-        isHulu: false,
-        isPrime: true,
-        rating: "Watch",
-      },
-    ],
-    newItem: {
-      title: {
-        value: ''
-      },
-      rating: {
-        value: ''
-      },
-      isNetflix: {
-        value: false
-      },
-      isHulu: {
-        value: false
-      },
-      isPrime: {
-        value: false
-      },
-    },
+    items : [],
     error: null,
   }
 
@@ -83,6 +45,12 @@ class App extends Component {
     })
   }
 
+  componentDidMount = () => {
+    this.setState({
+      items: watchList
+    })
+  }
+
   render () {
 
     const value = {
@@ -92,15 +60,14 @@ class App extends Component {
       onAddItem: this.handleAddItem,
       setItem: this.handleSetItem
     }
-    console.log( this.state )
     return (
       <AppContext.Provider value={ value }>
         <main className='App'>
           <Nav />
           <Route exact path='/' component={ Home }/> 
           <Route exact path='/' 
-            render={ () =>
-              <ItemForm state={ this.state } value={ value }/>
+            render={ ( routeProps ) =>
+              <ItemForm state={ this.state } value={ value } { ...routeProps }/>
             }/>
           <Route 
             exact path='/watchlist' 

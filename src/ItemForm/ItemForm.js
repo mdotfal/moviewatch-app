@@ -19,16 +19,11 @@ class ItemForm extends Component {
     this.context.onAddItem( 
       e.target.title.value,
       e.target.rating.value,
-      e.target.isNetflix.value, 
-      e.target.isHulu.value, 
-      e.target.isPrime.value, 
+      e.target.isNetflix.checked, 
+      e.target.isHulu.checked, 
+      e.target.isPrime.checked, 
      );
-    console.log( 'context', this.context )
     this.props.history.push( '/watchlist' );
-  }
-
-  handleButtonClick = () => {
-    // this.form.reset()
   }
 
   render() {
@@ -50,7 +45,6 @@ class ItemForm extends Component {
               >Submit</button>
               <button 
                 type="reset"
-                onClick={ this.handleButtonClick }
               >Reset</button>
             </div>
           </form>
