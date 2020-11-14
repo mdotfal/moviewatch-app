@@ -21,7 +21,6 @@ const watchList = [
     isPrime: true,
     rating: "Watch",
   },
- 
 ]
 
 export default watchList;

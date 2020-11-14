@@ -8,6 +8,7 @@ import watchList from './watchList';
 import Footer from './Footer/Footer';
 import './App.css';
 import AppContext from './AppContext';
+// import config from './config';
 
 class App extends Component {
 
@@ -17,7 +18,6 @@ class App extends Component {
   }
 
   handleDeleteItem = item => {
-    // console.log( 'handle delete clicked', { item })
     const newItems = this.state.items.filter( itm => itm !== item )
     this.setState({
       items: newItems
@@ -29,7 +29,6 @@ class App extends Component {
   }
 
   handleAddItem = ( title, rating, isNetflix, isHulu, isPrime ) => {
-    // console.log( 'handle add item', { title, rating } )
     const newItems = [
       ...this.state.items,
       { 
@@ -45,10 +44,36 @@ class App extends Component {
     })
   }
 
+  // setItems = () => {
+  //   this.setState({
+  //     items: watchList
+  //   })
+  // }
+
   componentDidMount = () => {
+
     this.setState({
       items: watchList
     })
+    // const url = config.API_ENDPOINT;
+    // fetch( `${ url }/watchlist`, {
+    //   method: 'GET',
+    //   headers: {
+    //     'content-type': 'application/json',
+    //   }
+    // })
+    //   .then( res => {
+    //     if( !res.ok ) {
+    //       throw new Error( res.status )
+    //     }
+    //     return res.json()
+    //   })
+    //   .then( data => {
+    //     this.setState({
+    //       items: watchList
+    //     })
+    //   })
+    //   .catch( error => this.setState( { error } ))
   }
 
   render () {
@@ -57,9 +82,9 @@ class App extends Component {
       items: this.state.items,
       onDeleteItem: this.handleDeleteItem,
       onEditItem: this.handleEditItem,
-      onAddItem: this.handleAddItem,
-      setItem: this.handleSetItem
+      onAddItem: this.handleAddItem
     }
+
     return (
       <AppContext.Provider value={ value }>
         <main className='App'>

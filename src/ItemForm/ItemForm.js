@@ -15,7 +15,6 @@ class ItemForm extends Component {
   
   handleSubmit = e => {
     e.preventDefault()
-    // console.log('submit clicked', this.context )
     this.context.onAddItem( 
       e.target.title.value,
       e.target.rating.value,
