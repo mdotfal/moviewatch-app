@@ -1,12 +1,42 @@
 import React, { Component } from 'react';
 import AppContext from '../AppContext';
-// import watchList from '../watchList';
+import config from '../config';
+import { withRouter } from 'react-router-dom';
+
 
 class ListItem extends Component {
-  static contextType = AppContext;
-  
-  render() {
+  static defaultProps ={
+    onDeleteItem: () => {},
+  }
 
+  static contextType = AppContext;
+
+  handleClickDelete = e => {
+    e.preventDefault()
+    const itemId = this.props.item.id
+
+    fetch( `${ config.API_ENDPOINT }/api/items/${ itemId }`, {
+      method: 'DELETE',
+      headers: {
+        'content-type': 'application/json',
+      }
+    })
+    .then( res => {
+      if ( !res.ok )
+        return res.json().then( e => Promise.reject( e ))
+      return res
+    })
+    .then( () => {
+      this.context.onDeleteItem( itemId )
+      this.props.onDeleteItem( itemId )
+      this.props.history.push( '/watchlist' );
+    })
+    .catch( error => {
+      console.log( error )
+    })
+  }
+
+  render() {
     return (
       <section>
         <header>
@@ -20,17 +50,17 @@ class ListItem extends Component {
             <p>Available on:</p>
         </header>
           <div className='stream-buttons'>
-            { this.props.item.isNetflix !== false ? <button> Netflix </button> : "" }
-            { this.props.item.isHulu !== false ? <button> Hulu </button> : "" }
-            { this.props.item.isPrime !== false ? <button> Prime </button> : "" }
+            { this.props.item.is_netflix !== false ? <button> Netflix </button> : "" }
+            { this.props.item.is_hulu !== false ? <button> Hulu </button> : "" }
+            { this.props.item.is_prime !== false ? <button> Prime </button> : "" }
           </div>
         <button 
-          onClick={ () => this.props.onEditItem( this.props.item ) } 
+          onClick={ () => this.context.onUpdateItem( this.context.item ) } 
           type='button'>
             Edit
         </button>
         <button
-          onClick={ () => this.props.onDeleteItem( this.props.item ) } 
+          onClick={ this.handleClickDelete } 
           type='button'>
             Delete
         </button>
@@ -39,4 +69,4 @@ class ListItem extends Component {
   }
 };
 
-export default ListItem;
+export default withRouter( ListItem );

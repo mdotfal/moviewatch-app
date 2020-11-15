@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import ListItem from '../ListItem/ListItem';
-// import watchList from '../watchList';
 import AppContext from '../AppContext';
 import './WatchList.css';
 
@@ -21,7 +20,6 @@ class WatchList extends Component {
               key={ i } 
               item={ item }
               onDeleteItem={ this.context.onDeleteItem }
-              onEditItem={ this.context.onEditItem }
             />
           }) } 
         </main> 

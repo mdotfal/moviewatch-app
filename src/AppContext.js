@@ -4,8 +4,9 @@ import React from 'react';
 const AppContext = React.createContext({
 
   items: [],
-  addItem: () => {},
-  deleteNote: () => {}
+  onAddItem: () => {},
+  onDeleteItem: () => {},
+  onUpdateItem: () => {}
 
 })
 
