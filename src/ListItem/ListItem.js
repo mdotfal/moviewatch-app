@@ -55,8 +55,7 @@ class ListItem extends Component {
           { this.props.item.is_prime !== false ? <button> Prime </button> : "" }
         </div>
         <Link to={ `/edit/${ this.props.item.id }` }>
-          <button 
-            onClick={ () => this.context.onUpdateItem( this.context.item ) } 
+          <button  
             type='button'>
               Edit
           </button>

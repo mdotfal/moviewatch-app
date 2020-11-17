@@ -64,7 +64,9 @@ class EditItem extends Component {
   handleSubmit = e => {
     e.preventDefault()
     const { itemId } = this.props.match.params
-    const updatedItem = { 
+    const updatedItem = {
+      id: Number( itemId ),
+      title: e.target.title.value, 
       is_netflix: e.target.is_netflix.checked, 
       is_hulu: e.target.is_hulu.checked, 
       is_prime: e.target.is_prime.checked,
@@ -84,7 +86,7 @@ class EditItem extends Component {
     })
     .then( () => {
       this.context.onUpdateItem( updatedItem )
-      this.props.history.push( '/' )
+      this.props.history.push( '/watchlist' )
     })
     .catch( error => this.setState( { error } ))
   }
