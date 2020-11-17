@@ -3,6 +3,9 @@ import AppContext from '../AppContext';
 import config from '../config';
 
 class EditItem extends Component {
+  static defaultProps ={
+    onUpdateItem: () => {},
+  }
 
   static contextType =  AppContext;
 
@@ -60,19 +63,13 @@ class EditItem extends Component {
 
   handleSubmit = e => {
     e.preventDefault()
-    console.log('clicked')
     const { itemId } = this.props.match.params
-    console.log( itemId )
-    const { id, title, is_netflix, is_hulu, is_prime, rating } = this.state
     const updatedItem = { 
-      id, 
-      title,
-      is_netflix, 
-      is_hulu, 
-      is_prime, 
-      rating
+      is_netflix: e.target.is_netflix.checked, 
+      is_hulu: e.target.is_hulu.checked, 
+      is_prime: e.target.is_prime.checked,
+      rating: e.target.rating.value
     }
-    console.log( updatedItem )
 
     fetch( `${ config.API_ENDPOINT }/api/items/${ itemId }`, {
       method: 'PATCH',
@@ -86,9 +83,8 @@ class EditItem extends Component {
         return res.json().then( error => Promise.reject( error ) )
     })
     .then( () => {
-      console.log('updatedItem', updatedItem )
       this.context.onUpdateItem( updatedItem )
-      this.props.history.push( '/watchlist' )
+      this.props.history.push( '/' )
     })
     .catch( error => this.setState( { error } ))
   }
@@ -98,7 +94,7 @@ class EditItem extends Component {
   }
   
   render() {
-    const { title, is_netflix, is_hulu, is_prime, rating } = this.state
+    const { title, is_netflix, is_hulu, is_prime } = this.state
 
     return (
       <section className='EditItemForm'>
