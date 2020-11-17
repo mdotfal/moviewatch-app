@@ -88,22 +88,21 @@ class App extends Component {
       <AppContext.Provider value={ value } >
         <main className='App'>
           <Nav />
-          <Route exact path='/' component={ Home }/> 
+          <Route 
+            exact path='/' 
+            component={ Home }/> 
           <Route 
             exact 
             path='/' 
-            render={ ( routeProps ) =>
-              <ItemForm value={ value } />
-            }/>
+            component={ ItemForm }
+            />
           <Route 
             path='/edit/:itemId' 
             component={ EditItem } 
             value={ value }/>
           <Route 
             exact path='/watchlist' 
-            render={ () => 
-              <WatchList value={ value } /> 
-            }/>
+            component={ WatchList }/>
           <Footer />
         </main>
       </AppContext.Provider>

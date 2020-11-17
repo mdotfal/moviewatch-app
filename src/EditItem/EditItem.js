@@ -66,25 +66,27 @@ class EditItem extends Component {
     const { id, title, is_netflix, is_hulu, is_prime, rating } = this.state
     const updatedItem = { 
       id, 
-      title, 
+      title,
       is_netflix, 
       is_hulu, 
       is_prime, 
-      rating 
+      rating
     }
     console.log( updatedItem )
 
-    fetch( `https://blooming-thicket-74963.herokuapp.com/api/items/${ itemId }`, {
+    fetch( `${ config.API_ENDPOINT }/api/items/${ itemId }`, {
       method: 'PATCH',
       body: JSON.stringify( updatedItem ),
-      headers: 'application/json'
+      headers: {
+        "content-type": 'application/json'
+      },
     })
     .then(res => {
       if ( !res.ok )
         return res.json().then( error => Promise.reject( error ) )
     })
     .then( () => {
-      console.log('test')
+      console.log('updatedItem', updatedItem )
       this.context.onUpdateItem( updatedItem )
       this.props.history.push( '/watchlist' )
     })
@@ -96,7 +98,7 @@ class EditItem extends Component {
   }
   
   render() {
-    const { title, is_netflix, is_hulu, is_prime } = this.state
+    const { title, is_netflix, is_hulu, is_prime, rating } = this.state
 
     return (
       <section className='EditItemForm'>
