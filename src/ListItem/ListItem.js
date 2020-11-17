@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import AppContext from '../AppContext';
 import config from '../config';
-import { withRouter } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 
 
 class ListItem extends Component {
@@ -49,16 +49,18 @@ class ListItem extends Component {
             </span></h2>
             <p>Available on:</p>
         </header>
-          <div className='stream-buttons'>
-            { this.props.item.is_netflix !== false ? <button> Netflix </button> : "" }
-            { this.props.item.is_hulu !== false ? <button> Hulu </button> : "" }
-            { this.props.item.is_prime !== false ? <button> Prime </button> : "" }
-          </div>
-        <button 
-          onClick={ () => this.context.onUpdateItem( this.context.item ) } 
-          type='button'>
-            Edit
-        </button>
+        <div className='stream-buttons'>
+          { this.props.item.is_netflix !== false ? <button> Netflix </button> : "" }
+          { this.props.item.is_hulu !== false ? <button> Hulu </button> : "" }
+          { this.props.item.is_prime !== false ? <button> Prime </button> : "" }
+        </div>
+        <Link to={ `/edit/${ this.props.item.id }` }>
+          <button 
+            onClick={ () => this.context.onUpdateItem( this.context.item ) } 
+            type='button'>
+              Edit
+          </button>
+        </Link>
         <button
           onClick={ this.handleClickDelete } 
           type='button'>

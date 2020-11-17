@@ -43,15 +43,15 @@ class EditItem extends Component {
   }
 
   handleChangeNetflix = e => {
-    this.setState({ is_netflix: e.target.value })
+    this.setState({ is_netflix: e.target.checked })
   }
 
   handleChangeHulu = e => {
-    this.setState({ is_hulu: e.target.value })
+    this.setState({ is_hulu: e.target.checked })
   }
 
   handleChangePrime = e => {
-    this.setState({ is_prime: e.target.value })
+    this.setState({ is_prime: e.target.checked })
   }
 
   handleChangeRating = e => {
@@ -60,32 +60,41 @@ class EditItem extends Component {
 
   handleSubmit = e => {
     e.preventDefault()
-    console.log( this.props )
+    console.log('clicked')
     const { itemId } = this.props.match.params
+    console.log( itemId )
     const { id, title, is_netflix, is_hulu, is_prime, rating } = this.state
-    const newItem = { id, title, is_netflix, is_hulu, is_prime, rating }
+    const updatedItem = { 
+      id, 
+      title, 
+      is_netflix, 
+      is_hulu, 
+      is_prime, 
+      rating 
+    }
+    console.log( updatedItem )
 
-    fetch( `https://localhost:8000/api/items/${ itemId }`, {
+    fetch( `https://blooming-thicket-74963.herokuapp.com/api/items/${ itemId }`, {
       method: 'PATCH',
-      body: JSON.stringify( newItem )
+      body: JSON.stringify( updatedItem ),
+      headers: 'application/json'
     })
-    .then( res => {
-      if( !res.ok ) {
-        throw new Error( res.status )
-      }
-      return res.json()
+    .then(res => {
+      if ( !res.ok )
+        return res.json().then( error => Promise.reject( error ) )
     })
-    .then( responseData => {
-      this.context.updateItem( responseData )
-      this.props.history.push( '/' )
+    .then( () => {
+      console.log('test')
+      this.context.onUpdateItem( updatedItem )
+      this.props.history.push( '/watchlist' )
     })
     .catch( error => this.setState( { error } ))
   }
-
+  
   handleClickCancel = () => {
     this.props.history.push( '/' );
   }
-
+  
   render() {
     const { title, is_netflix, is_hulu, is_prime } = this.state
 
@@ -102,7 +111,7 @@ class EditItem extends Component {
               <fieldset>
                 <div>
                   <label htmlFor="is_netflix" />Netflix { ' ' }
-                  <input type="checkbox" id="is_netflix" name="option" value={ is_netflix }  onChange={ this.handleChangeNetflix }/>
+                  <input type="checkbox" id="is_netflix" name="option" value={ is_netflix } onChange={ this.handleChangeNetflix }/>
                 </div>
                 <div>
                   <label htmlFor="is_hulu" />Hulu { ' ' }
@@ -127,6 +136,7 @@ class EditItem extends Component {
             <div>
               <button 
                 type="submit"
+                onSubmit={ this.handleSubmit }
               >Submit</button>
               <button 
                 type="Cancel"

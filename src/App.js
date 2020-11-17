@@ -63,9 +63,10 @@ class App extends Component {
     })
   }
 
-  handleUpdateItem = updatedItem => {
+  handleUpdateItem = ( updatedItem )  => {
+    console.log( this.state.items )
     const newItems = this.state.items.map( itm =>
-      ( itm.id === updatedItem.id )
+      ( itm.id === updatedItem )
       ? updatedItem 
       : itm  
       )
