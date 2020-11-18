@@ -74,6 +74,12 @@ input[type="button"] {
   margin-bottom: 30px;
 }
 
+.form-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .button-section {
   padding: 15 15 15 15px;
 }

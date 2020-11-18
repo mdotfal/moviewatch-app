@@ -11,6 +11,15 @@ body {
   line-height: 1.5;
 }
 
+a {
+  color: black;
+  padding: 0;
+}
+
+.navigation a {
+  padding: 10px;
+}
+
 h2 {
   margin: 0;
 }
@@ -50,4 +59,19 @@ p + p {
 
 .red {
   color: red;
+}
+
+.home {
+  background-color: red;
+  color: white;
+}
+
+section {
+  min-height: 75px;
+  padding: 30px 10px;
+  background-color: #e1e1e1;
+}
+
+section:nth-child(odd) {
+  background-color: #ffffff;
 }

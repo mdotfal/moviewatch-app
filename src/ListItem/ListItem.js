@@ -2,6 +2,10 @@ import React, { Component } from 'react';
 import AppContext from '../AppContext';
 import config from '../config';
 import { Link, withRouter } from 'react-router-dom';
+import netflix from '../icons/netflix.png';
+import hulu from '../icons/hulu.png';
+import prime_video from '../icons/prime_video.png';
+import './ListItem.css';
 
 
 class ListItem extends Component {
@@ -46,21 +50,24 @@ class ListItem extends Component {
                 ? <button className='green'>{ this.props.item.rating }</button> 
                 : <button className='red'>{ this.props.item.rating }</button> 
               }
-            </span></h2>
+            </span>
+          </h2>
             <p>Available on:</p>
         </header>
         <div className='stream-buttons'>
-          { this.props.item.is_netflix !== false ? <button> Netflix </button> : "" }
-          { this.props.item.is_hulu !== false ? <button> Hulu </button> : "" }
-          { this.props.item.is_prime !== false ? <button> Prime </button> : "" }
+          { this.props.item.is_netflix !== false ? <img src={ netflix } alt='netflix icon' /> : "" }
+          { this.props.item.is_hulu !== false ? <img src={ hulu } alt='hulu icon'/> : "" }
+          { this.props.item.is_prime !== false ? <img src={ prime_video } alt='prime video icon'/> : "" }
         </div>
         <Link to={ `/edit/${ this.props.item.id }` }>
-          <button  
+          <button
+            className='btn' 
             type='button'>
               Edit
           </button>
         </Link>
         <button
+          className='btn'
           onClick={ this.handleClickDelete } 
           type='button'>
             Delete

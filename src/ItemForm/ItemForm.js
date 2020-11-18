@@ -63,11 +63,13 @@ class ItemForm extends Component {
             <StreamingOptions />
             <RatingOptions />
             
-            <div>
-              <button 
+            <div className='form-btn'>
+              <button
+                className='btn' 
                 type="submit"
               >Submit</button>
-              <button 
+              <button
+                className='btn' 
                 type="reset"
               >Reset</button>
             </div>
