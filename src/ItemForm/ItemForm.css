@@ -2,31 +2,8 @@
   box-sizing: border-box;
 }
 
-body {
-  font-family: "Open Sans",
-  sans-serif;
-  font-size: 20px;
-  color: #444;
-  text-align: center;
-  line-height: 1.5;
-  min-width: 320px;
-}
-
-footer {
-  padding: 1% 0;
-  background-color: #aaa;
-}
-
-header {
-  padding: 45px 15px;
-}
-
 section {
   padding: 30px 15px 0;
-}
-
-section:nth-child(odd) {
-  background-color: #ddd;
 }
 
 p, h2 {
@@ -36,12 +13,6 @@ p, h2 {
 h2 {
   font-weight: 700;
   font-size: 20px;
-}
-
-form {
-  margin: 0 auto;
-  padding: 0 0 40px;
-  max-width: 650px;
 }
 
 label p {
