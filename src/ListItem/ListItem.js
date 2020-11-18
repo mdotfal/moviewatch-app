@@ -47,8 +47,8 @@ class ListItem extends Component {
           <h2>{ this.props.item.title } - 
             <span>
               { this.props.item.rating === 'Watch' 
-                ? <button className='green'>{ this.props.item.rating }</button> 
-                : <button className='red'>{ this.props.item.rating }</button> 
+                ? <button className='green btn'>{ this.props.item.rating }</button> 
+                : <button className='red btn'>{ this.props.item.rating }</button> 
               }
             </span>
           </h2>
@@ -61,13 +61,13 @@ class ListItem extends Component {
         </div>
         <Link to={ `/edit/${ this.props.item.id }` }>
           <button
-            className='btn' 
+            className='btn btn-border-black' 
             type='button'>
               Edit
           </button>
         </Link>
         <button
-          className='btn'
+          className='btn btn-border-black'
           onClick={ this.handleClickDelete } 
           type='button'>
             Delete

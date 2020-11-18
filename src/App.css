@@ -44,8 +44,7 @@ fieldset {
   box-sizing: border-box;
   appearance: none;
   background-color: transparent;
-  color: black;
-  border: 2px solid black;
+  /* color: black; */
   border-radius: 0.6em;
   cursor: pointer;
   align-self: center;
@@ -58,4 +57,8 @@ fieldset {
   text-align: center;
   text-transform: uppercase;
   font-weight: 700;
+}
+
+.btn-border-black {
+  border: 2px solid black;
 }

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import AppContext from '../AppContext';
 import config from '../config';
+import './EditItem.css';
 
 class EditItem extends Component {
   static defaultProps ={
@@ -102,10 +103,10 @@ class EditItem extends Component {
       <section className='EditItemForm'>
         <h2>Edit item</h2>
           <form onSubmit={ this.handleSubmit }> 
-            <section className="overview-section">
+            <div className="overview-section overview">
               <label htmlFor="title">Movie / TV show title</label>
               <input type="text" id="content-title" name="title" placeholder="Haunting of Hill House" value={ title } onChange={ this.handleChangeTitle }/>
-            </section>
+            </div>
             
             <div className="content-streaming overview-section">
               <fieldset>
@@ -133,12 +134,14 @@ class EditItem extends Component {
               </label>
             </div>
 
-            <div>
-              <button 
+            <div className='form-btn'>
+              <button
+                className='btn btn-border-black' 
                 type="submit"
                 onSubmit={ this.handleSubmit }
               >Submit</button>
-              <button 
+              <button
+                className='btn btn-border-black' 
                 type="Cancel"
                 onChange={ this.handleClickCancel }
               >Cancel</button>

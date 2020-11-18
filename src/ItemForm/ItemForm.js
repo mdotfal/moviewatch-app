@@ -65,11 +65,11 @@ class ItemForm extends Component {
             
             <div className='form-btn'>
               <button
-                className='btn' 
+                className='btn btn-border-black' 
                 type="submit"
               >Submit</button>
               <button
-                className='btn' 
+                className='btn btn-border-black' 
                 type="reset"
               >Reset</button>
             </div>
