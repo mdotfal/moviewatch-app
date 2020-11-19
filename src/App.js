@@ -59,7 +59,6 @@ class App extends Component {
   }
 
   handleUpdateItem = ( updatedItem )  => {
-    console.log('updated item', updatedItem, this.state.items )
     const newItems = this.state.items.map( itm =>
       ( itm.id === updatedItem.id )
       ? updatedItem 
