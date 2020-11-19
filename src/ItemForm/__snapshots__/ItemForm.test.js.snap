@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ItemForm component renders with test item 1`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
+`;
+
+exports[`ItemForm component renders without errors 1`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
+`;

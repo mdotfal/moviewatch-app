@@ -2,10 +2,6 @@
   box-sizing: border-box;
 }
 
-/* section {
-  max-height: 60px;
-} */
-
 .navigation {
   position: fixed;
   top: 0;
@@ -20,4 +16,5 @@
 
 a {
   padding: 20px;
+  text-decoration: none;
 }

@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Footer component renders without errors 1`] = `
+<div>
+  <footer
+    className="content-info"
+  >
+    MovieWatch 2020
+  </footer>
+</div>
+`;

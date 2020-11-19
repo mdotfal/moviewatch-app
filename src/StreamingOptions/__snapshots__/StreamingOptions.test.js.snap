@@ -1,0 +1,49 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`StreamingOptions component renders without errors 1`] = `
+<div
+  className="content-streaming overview-section flex"
+>
+  <fieldset>
+    <div>
+      <label
+        htmlFor="is_netflix"
+      >
+        Netflix
+        <input
+          id="is_netflix"
+          name="option"
+          type="checkbox"
+          value="Netflix"
+        />
+      </label>
+    </div>
+    <div>
+      <label
+        htmlFor="is_hulu"
+      >
+        Hulu
+        <input
+          id="is_hulu"
+          name="option"
+          type="checkbox"
+          value="Hulu"
+        />
+      </label>
+    </div>
+    <div>
+      <label
+        htmlFor="is_prime"
+      >
+        Prime Video
+        <input
+          id="is_prime"
+          name="option"
+          type="checkbox"
+          value="Prime Video"
+        />
+      </label>
+    </div>
+  </fieldset>
+</div>
+`;

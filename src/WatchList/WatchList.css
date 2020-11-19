@@ -2,37 +2,25 @@
   box-sizing: border-box;
 }
 
-body {
-  font-family: "Open Sans",
-  sans-serif;
-  font-size: 20px;
-  color: #444;
-  text-align: center;
-  line-height: 1.5;
+a {
+  color: black;
+  padding: 0;
 }
 
-footer {
-  padding: 1% 0;
-  background-color: #aaa;
+.navigation a {
+  padding: 10px;
+}
+
+h2 {
+  margin: 0;
 }
 
 .banner {
   padding: 75px 0 0 0;
 }
 
-p {
-  margin: 0 auto;
-  max-width: 650px;
-}
-
-p + p {
-  margin-top: 15px;
-}
-
 .btn {
-  background-color: #4CAF50; /* Green */
   border: none;
-  color: white;
   padding: 15px 20px;
   text-align: center;
   text-decoration: none;
@@ -41,9 +29,22 @@ p + p {
 }
 
 .green {
-  color: green;
+  color: #30e587;
+  border: 2px solid #30e587;
 }
 
 .red {
   color: red;
+  border: 2px solid red;
+}
+
+.home {
+  background-color: red;
+  color: white;
+}
+
+section {
+  min-height: 75px;
+  padding: 30px 10px;
+  background-color: #f9f9f9;
 }

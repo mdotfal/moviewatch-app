@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Nav component renders without errors 1`] = `
+<section
+  className="navigation"
+>
+  <Link
+    to="/"
+  >
+    Home
+  </Link>
+  <Link
+    to="/watchlist"
+  >
+    Watchlist
+  </Link>
+</section>
+`;

@@ -1,0 +1,39 @@
+.overview {
+  padding: 10px;
+}
+
+.overview-section input,
+.overview-section textarea {
+  width: 100%;
+}
+
+.content-rating,
+.content-streaming {
+  flex-direction: row;
+  text-align: center;
+}
+
+.content-rating {
+  justify-content: center;
+  padding-bottom: 10px;
+}
+
+.content-streaming {
+  justify-content: space-evenly;
+  padding-bottom: 20px;
+  flex-direction: row;
+}
+
+section:nth-child(odd) {
+  background-color: #ffffff;
+}
+
+.form-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-border-black {
+  border: 2px solid black;
+}

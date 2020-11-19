@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ListItem component renders the item when supplied 1`] = `
+<section>
+  <p>
+    Available on:
+  </p>
+  <header>
+    <h2>
+      Test title
+       -
+      <span>
+        <button
+          className="red"
+        />
+      </span>
+    </h2>
+  </header>
+  <div
+    className="stream-buttons"
+  />
+  <button>
+    Edit
+  </button>
+  <button>
+    Delete
+  </button>
+</section>
+`;
