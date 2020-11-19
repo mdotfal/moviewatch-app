@@ -3,7 +3,7 @@ import './Header.css';
 
 function Header() {
   return (
-    <header className="banner">
+    <header className="banner welcome">
       <h1>Movie Watch</h1>
       <h3>Welcome to MovieWatch!</h3>
       <p>While 2020 has given us it's fair share of ups and downs, one thing has remained consistent.</p> 
