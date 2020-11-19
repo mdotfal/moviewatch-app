@@ -1,21 +1,3 @@
-<<<<<<< HEAD
-import React from 'react';
-
-const ListItem = ({ item }) => {
-  
-  return (
-    <section>
-      <header>
-        <h2>{ item.title } - <span className='green'>{ item.rating }</span></h2>
-      </header>
-      <div className='stream-buttons'>
-  
-      </div>
-      <button>Edit</button>
-      <button>Delete</button>
-    </section>
-  );
-=======
 import React, { Component } from 'react';
 import AppContext from '../AppContext';
 import config from '../config';
@@ -93,7 +75,6 @@ class ListItem extends Component {
       </section>
     );
   }
->>>>>>> dev
 };
 
 export default withRouter( ListItem );

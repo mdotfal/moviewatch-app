@@ -4,11 +4,7 @@ import './StreamingOptions.css';
 class StreamingOptions extends Component {
   render() {
     return (
-<<<<<<< HEAD
-      <div className="content-streaming overview-section">
-=======
       <div className="content-streaming overview-section flex">
->>>>>>> dev
         <fieldset>
           <div>
             <label htmlFor="is_netflix">Netflix

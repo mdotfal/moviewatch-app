@@ -10,24 +10,6 @@ import AppContext from './AppContext';
 import EditItem from './EditItem/EditItem';
 import config from './config';
 
-<<<<<<< HEAD
-// const WATCHLIST = [
-//   {
-//     "content-title": "Back to the Future II",
-//     "rating": "watch",
-//   },
-//   {
-//     "content-title": "Big Short",
-//     "rating": "watch",
-//   },
-//   {
-//     "content-title": "The Room",
-//     "rating": "watch",
-//   },
-// ];
-=======
->>>>>>> dev
-
 class App extends Component {
 
   state = {
@@ -88,14 +70,6 @@ class App extends Component {
 
   render () {
 
-<<<<<<< HEAD
-        <Route exact path='/' component={ Home }/> 
-        <Route path='/item' component={ ItemForm } />
-        <Route path='/watchlist' component={ WatchList } />
-
-        <Footer />
-      </main>
-=======
     const value = {
       items: this.state.items,
       onDeleteItem: this.handleDeleteItem,
@@ -125,7 +99,6 @@ class App extends Component {
           <Footer />
         </main>
       </AppContext.Provider>
->>>>>>> dev
     );
   }
 }
