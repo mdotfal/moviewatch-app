@@ -20,12 +20,7 @@ class App extends Component {
 
   componentDidMount = () => {
     const url = config.API_ENDPOINT;
-    fetch( `${ url }/api/items`, {
-      method: 'GET',
-      headers: {
-        'content-type': 'application/json',
-      }
-    })
+    fetch( `${ url }/api/items` )
     .then( res => {
       if( !res.ok ) {
         throw new Error( res.status )
