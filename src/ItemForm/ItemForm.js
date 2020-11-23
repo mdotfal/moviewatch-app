@@ -19,6 +19,8 @@ class ItemForm extends Component {
     error: null
   };
 
+  /* HANDLER FOR POST REQUEST */
+
   handleSubmit = e => {
     e.preventDefault();
     const newItem = { 
@@ -49,6 +51,8 @@ class ItemForm extends Component {
         console.log({ error });
       })   
   };
+
+  /* MAIN RENDER */
 
   render() {
     return (

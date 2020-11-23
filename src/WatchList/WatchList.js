@@ -15,6 +15,9 @@ class WatchList extends Component {
           <header className="banner">
             <h1>Watchlist</h1>
           </header>
+
+          {/* ITEMS ARRAY MAP TO DISPLAY ListItem COMPONENTS ON WATCHLIST */}
+
           { items.map( ( item, i ) => {
             return <ListItem 
               key={ i } 

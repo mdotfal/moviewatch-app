@@ -19,6 +19,8 @@ class EditItem extends Component {
     rating: 'Watch'
   };
 
+  /* GET Request */
+
   componentDidMount() {
     const itemId = this.props.match.params.itemId
     fetch( `${ config.API_ENDPOINT }/api/items/${ itemId }`, {
@@ -41,6 +43,8 @@ class EditItem extends Component {
     })
     .catch( error => this.setState( { error } ))
   };
+
+  /* HANDLER FUNCTIONS */
 
   handleChangeTitle = e => {
     this.setState({ title: e.target.value });
@@ -96,6 +100,8 @@ class EditItem extends Component {
     this.props.history.push( '/' );
   };
   
+  /* MAIN RENDER */
+
   render() {
     const { title, is_netflix, is_hulu, is_prime } = this.state;
 

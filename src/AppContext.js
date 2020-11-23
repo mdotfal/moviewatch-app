@@ -8,6 +8,6 @@ const AppContext = React.createContext({
   onDeleteItem: () => {},
   onUpdateItem: () => {}
 
-})
+});
 
 export default AppContext;

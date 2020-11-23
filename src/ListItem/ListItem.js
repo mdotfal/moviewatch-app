@@ -15,6 +15,8 @@ class ListItem extends Component {
 
   static contextType = AppContext;
 
+  /* HANDLER FUNCTION FOR DELETE REQUEST */
+
   handleClickDelete = e => {
     e.preventDefault();
     const itemId = this.props.item.id;
@@ -39,6 +41,8 @@ class ListItem extends Component {
       console.log( error );
     })
   };
+
+  /* MAIN RENDER */
 
   render() {
     return (

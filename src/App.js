@@ -34,6 +34,8 @@ class App extends Component {
     .catch( error => this.setState( { error } ));
   };
 
+  /* HANDLER FUNCTIONS */
+
   handleDeleteItem = itemId => {
     const newItems = this.state.items.filter( itm => itm.id !== itemId );
     this.setState({
@@ -68,6 +70,9 @@ class App extends Component {
       });
     };
 
+
+  /* MAIN RENDER */
+  
   render () {
 
     const value = {
