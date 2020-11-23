@@ -57,7 +57,7 @@ class ItemForm extends Component {
           <form onSubmit={ this.handleSubmit } id="record-content">
             <section className="overview-section">
               <label htmlFor="title">Movie / TV show title</label>
-              <input type="text" id="content-title" name="title" placeholder="Haunting of Hill House" />
+              <input type="text" id="title" name="title" placeholder="Haunting of Hill House" />
             </section>
 
             <StreamingOptions />

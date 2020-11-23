@@ -6,6 +6,7 @@ class StreamingOptions extends Component {
     return (
       <div className="content-streaming overview-section flex">
         <fieldset>
+          <legend>Select all that apply</legend>
           <div>
             <label htmlFor="is_netflix">Netflix
             <input type="checkbox" id="is_netflix" name="option" value="Netflix" /></label>
