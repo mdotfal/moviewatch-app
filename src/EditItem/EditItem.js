@@ -6,7 +6,7 @@ import './EditItem.css';
 class EditItem extends Component {
   static defaultProps ={
     onUpdateItem: () => {},
-  }
+  };
 
   static contextType =  AppContext;
 
@@ -17,7 +17,7 @@ class EditItem extends Component {
     is_hulu: false,
     is_prime: false,
     rating: 'Watch'
-  }
+  };
 
   componentDidMount() {
     const itemId = this.props.match.params.itemId
@@ -26,9 +26,9 @@ class EditItem extends Component {
     })
     .then( res => {
       if( !res.ok ) {
-        return res.json().then( error => Promise.reject( error ))
+        return res.json().then( error => Promise.reject( error ));
       }
-      return res.json()
+      return res.json();
     })
     .then( data => {
       this.setState({
@@ -37,34 +37,34 @@ class EditItem extends Component {
         is_netflix: data.is_netflix,
         is_hulu: data.is_hulu,
         is_prime: data.is_prime,
-      })
+      });
     })
     .catch( error => this.setState( { error } ))
-  }
+  };
 
   handleChangeTitle = e => {
-    this.setState({ title: e.target.value })
-  }
+    this.setState({ title: e.target.value });
+  };
 
   handleChangeNetflix = e => {
-    this.setState({ is_netflix: e.target.checked })
-  }
+    this.setState({ is_netflix: e.target.checked });
+  };
 
   handleChangeHulu = e => {
-    this.setState({ is_hulu: e.target.checked })
-  }
+    this.setState({ is_hulu: e.target.checked });
+  };
 
   handleChangePrime = e => {
-    this.setState({ is_prime: e.target.checked })
-  }
+    this.setState({ is_prime: e.target.checked });
+  };
 
   handleChangeRating = e => {
-    this.setState({ rating: e.target.value })
-  }
+    this.setState({ rating: e.target.value });
+  };
 
   handleSubmit = e => {
-    e.preventDefault()
-    const { itemId } = this.props.match.params
+    e.preventDefault();
+    const { itemId } = this.props.match.params;
     const updatedItem = {
       id: Number( itemId ),
       title: e.target.title.value, 
@@ -72,7 +72,7 @@ class EditItem extends Component {
       is_hulu: e.target.is_hulu.checked, 
       is_prime: e.target.is_prime.checked,
       rating: e.target.rating.value
-    }
+    };
 
     fetch( `${ config.API_ENDPOINT }/api/items/${ itemId }`, {
       method: 'PATCH',
@@ -83,21 +83,21 @@ class EditItem extends Component {
     })
     .then(res => {
       if ( !res.ok )
-        return res.json().then( error => Promise.reject( error ) )
+        return res.json().then( error => Promise.reject( error ) );
     })
     .then( () => {
-      this.context.onUpdateItem( updatedItem )
-      this.props.history.push( '/watchlist' )
+      this.context.onUpdateItem( updatedItem );
+      this.props.history.push( '/watchlist' );
     })
-    .catch( error => this.setState( { error } ))
-  }
+    .catch( error => this.setState( { error } ));
+  };
   
   handleClickCancel = () => {
     this.props.history.push( '/' );
-  }
+  };
   
   render() {
-    const { title, is_netflix, is_hulu, is_prime } = this.state
+    const { title, is_netflix, is_hulu, is_prime } = this.state;
 
     return (
       <section className='EditItemForm'>
@@ -149,7 +149,7 @@ class EditItem extends Component {
         </form>
       </section>
     );
-  }
-}
+  };
+};
 
 export default EditItem;

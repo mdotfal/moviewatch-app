@@ -15,7 +15,7 @@ class RatingOptions extends Component {
         </fieldset>
       </div>
     );
-  }
+  };
 };
 
 export default RatingOptions;

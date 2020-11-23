@@ -6,6 +6,6 @@ function Footer() {
       <footer className="content-info">MovieWatch 2020</footer>
     </div>
   );
-}
+};
 
 export default Footer;

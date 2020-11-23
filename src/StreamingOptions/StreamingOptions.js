@@ -22,7 +22,7 @@ class StreamingOptions extends Component {
         </fieldset>
       </div>
     );
-  }
+  };
 };
 
 export default StreamingOptions;

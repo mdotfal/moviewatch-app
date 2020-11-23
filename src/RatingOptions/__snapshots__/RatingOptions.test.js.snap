@@ -4,29 +4,34 @@ exports[`RatingOptions component renders without errors 1`] = `
 <div
   className="content-rating"
 >
-  <label
-    htmlFor="rating-watch"
-  >
-    <input
-      id="rating-watch"
-      name="rating"
-      required={true}
-      type="radio"
-      value="Watch"
-    />
-     Watch
-  </label>
-  <label
-    htmlFor="rating-skip"
-  >
-    <input
-      id="rating-skip"
-      name="rating"
-      required={true}
-      type="radio"
-      value="Skip"
-    />
-     Skip
-  </label>
+  <fieldset>
+    <legend>
+      Choose one:
+    </legend>
+    <label
+      htmlFor="rating-watch"
+    >
+      <input
+        id="rating-watch"
+        name="rating"
+        required={true}
+        type="radio"
+        value="Watch"
+      />
+       Watch
+    </label>
+    <label
+      htmlFor="rating-skip"
+    >
+      <input
+        id="rating-skip"
+        name="rating"
+        required={true}
+        type="radio"
+        value="Skip"
+      />
+       Skip
+    </label>
+  </fieldset>
 </div>
 `;

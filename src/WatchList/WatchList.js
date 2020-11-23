@@ -7,7 +7,7 @@ class WatchList extends Component {
   static contextType = AppContext;
 
   render() {
-    const { items } = this.context
+    const { items } = this.context;
     
     return (
       <div>
@@ -25,11 +25,11 @@ class WatchList extends Component {
         </main> 
       </div>
     );
-  }
+  };
 };
 
 WatchList.defaultProps = {
   items: []
-}
+};
 
 export default WatchList;

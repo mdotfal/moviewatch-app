@@ -7,16 +7,16 @@ exports[`Header component renders without errors 1`] = `
   <h1>
     Movie Watch
   </h1>
-  <h3>
+  <h2>
     Welcome to MovieWatch!
-  </h3>
+  </h2>
   <p>
     While 2020 has given us it's fair share of ups and downs, one thing has remained consistent.
   </p>
   <strong>
-    <p>
+    <h3>
       NEW QUALITY PROGRAMMING!
-    </p>
+    </h3>
   </strong>
   <p>
     With all of subscription services and multitudes of content to be consumed it's tough to keep track of what's new, what's good, and where to find it.

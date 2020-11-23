@@ -5,6 +5,9 @@ exports[`StreamingOptions component renders without errors 1`] = `
   className="content-streaming overview-section flex"
 >
   <fieldset>
+    <legend>
+      Select all that apply
+    </legend>
     <div>
       <label
         htmlFor="is_netflix"

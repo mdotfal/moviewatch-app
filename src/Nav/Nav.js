@@ -14,7 +14,7 @@ class Nav extends Component {
         </Link>
       </section>
     );
-  }
+  };
 };
 
 export default Nav;

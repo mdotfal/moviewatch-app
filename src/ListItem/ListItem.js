@@ -11,13 +11,13 @@ import './ListItem.css';
 class ListItem extends Component {
   static defaultProps ={
     onDeleteItem: () => {},
-  }
+  };
 
   static contextType = AppContext;
 
   handleClickDelete = e => {
-    e.preventDefault()
-    const itemId = this.props.item.id
+    e.preventDefault();
+    const itemId = this.props.item.id;
 
     fetch( `${ config.API_ENDPOINT }/api/items/${ itemId }`, {
       method: 'DELETE',
@@ -27,18 +27,18 @@ class ListItem extends Component {
     })
     .then( res => {
       if ( !res.ok )
-        return res.json().then( e => Promise.reject( e ))
-      return res
+        return res.json().then( e => Promise.reject( e ));
+      return res;
     })
     .then( () => {
-      this.context.onDeleteItem( itemId )
-      this.props.onDeleteItem( itemId )
+      this.context.onDeleteItem( itemId );
+      this.props.onDeleteItem( itemId );
       this.props.history.push( '/watchlist' );
     })
     .catch( error => {
-      console.log( error )
+      console.log( error );
     })
-  }
+  };
 
   render() {
     return (
@@ -74,7 +74,7 @@ class ListItem extends Component {
         </button>
       </section>
     );
-  }
+  };
 };
 
 export default withRouter( ListItem );

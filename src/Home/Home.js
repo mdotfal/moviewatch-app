@@ -14,7 +14,7 @@ class Home extends Component {
         </section>
       </div>
     );
-  }
+  };
 };
 
 export default Home;

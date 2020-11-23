@@ -15,31 +15,31 @@ class App extends Component {
   state = {
     items : [],
     error: null,
-  }
+  };
 
   componentDidMount = () => {
     const url = config.API_ENDPOINT;
     fetch( `${ url }/api/items` )
     .then( res => {
       if( !res.ok ) {
-        throw new Error( res.status )
+        throw new Error( res.status );
       }
-      return res.json()
+      return res.json();
     })
     .then( data => {
       this.setState({
         items: data
-      })
+      });
     })
-    .catch( error => this.setState( { error } ))
-  }
+    .catch( error => this.setState( { error } ));
+  };
 
   handleDeleteItem = itemId => {
-    const newItems = this.state.items.filter( itm => itm.id !== itemId )
+    const newItems = this.state.items.filter( itm => itm.id !== itemId );
     this.setState({
       items: newItems
-    })
-  }
+    });
+  };
 
   handleAddItem = item => {
     this.setState({
@@ -47,26 +47,26 @@ class App extends Component {
         ...this.state.items,
         item
       ]
-    })
-  }
+    });
+  };
 
   setItems = items => {
     this.setState({
       items,
       error: null
-    })
-  }
+    });
+  };
 
   handleUpdateItem = ( updatedItem )  => {
     const newItems = this.state.items.map( itm =>
       ( itm.id === updatedItem.id )
       ? updatedItem 
       : itm  
-      )
+      );
       this.setState({
         items: newItems
-      })
-    }
+      });
+    };
 
   render () {
 
@@ -75,7 +75,7 @@ class App extends Component {
       onDeleteItem: this.handleDeleteItem,
       onUpdateItem: this.handleUpdateItem,
       onAddItem: this.handleAddItem
-    }
+    };
 
     return (
       <AppContext.Provider value={ value } >
@@ -100,7 +100,7 @@ class App extends Component {
         </main>
       </AppContext.Provider>
     );
-  }
-}
+  };
+};
 
 export default App;

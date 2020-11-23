@@ -12,6 +12,6 @@ function Header() {
       <p>MovieWatch is a place you can recommend a movie or tv show, rate it, and tag the streaming services to to keep track of where to find it.</p>
     </header>
   );
-}
+};
 
 export default Header;

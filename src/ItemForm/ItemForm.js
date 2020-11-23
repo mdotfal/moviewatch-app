@@ -11,13 +11,13 @@ class ItemForm extends Component {
     history: {
       push: () => { }
     },
-  }
+  };
 
   static contextType = AppContext;
 
   state = {
     error: null
-  }
+  };
 
   handleSubmit = e => {
     e.preventDefault();
@@ -27,28 +27,28 @@ class ItemForm extends Component {
       is_hulu: e.target.is_hulu.checked, 
       is_prime: e.target.is_prime.checked,
       rating: e.target.rating.value 
-    }
+    };
     const options = {
       method: 'POST',
       body: JSON.stringify( newItem ),
       headers: {
         "Content-Type": "application/json"
       }
-    }
+    };
     fetch( `${ config.API_ENDPOINT }/api/items`, options )
       .then(res => {
         if ( !res.ok )
-          return res.json().then(e => Promise.reject( e ))
-        return res.json()
+          return res.json().then(e => Promise.reject( e ));
+        return res.json();
       })
       .then( item => {
-        this.context.onAddItem( item )
-        this.props.history.push( `/watchlist` )
+        this.context.onAddItem( item );
+        this.props.history.push( `/watchlist` );
       })
       .catch( error => {
-        console.log({ error })
+        console.log({ error });
       })   
-  }
+  };
 
   render() {
     return (
@@ -77,7 +77,7 @@ class ItemForm extends Component {
         </section>
       </main>
     );
-  }
+  };
 };
 
 export default withRouter( ItemForm );
